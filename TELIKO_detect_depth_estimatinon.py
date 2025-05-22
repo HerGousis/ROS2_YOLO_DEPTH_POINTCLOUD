@@ -3,10 +3,11 @@ import matplotlib.pyplot as plt
 from detect_kalo import detect_and_show, detect_and_get_boxes
 from monocular_depth_estimation import estimate_depth, depth_to_obj, generate_point_cloud_data
 import numpy as np
+from pointcloud import show_point_cloud_with_centroids
 
 # === Main ===
 if __name__ == '__main__':
-    image_path = 'image/1.jpg'
+    image_path = 'image/12.jpg'
 
     img = cv2.imread(image_path)
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -57,6 +58,11 @@ if __name__ == '__main__':
 
     # Εξαγωγή OBJ
     depth_to_obj(masked_depth, img, output_file='masked_scene.obj')
+
+    # boxes είναι λίστα από bounding boxes σε μορφή [x1, y1, x2, y2]
+    show_point_cloud_with_centroids(masked_depth, img, boxes, fx=fx, fy=fy, cx=cx, cy=cy)
+
+
 
     # === Προετοιμασία για plotting ===
     xs, ys, zs, colors, _ = generate_point_cloud_data(masked_depth, img, fx=fx, fy=fy, cx=cx, cy=cy)

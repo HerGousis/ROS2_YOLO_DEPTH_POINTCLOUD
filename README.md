@@ -53,3 +53,11 @@ python TELIKO_detect_depth_estimatinon.py
   <div style="text-align:center;">
     <img src="image/1.png" alt="1" width="800">
 </div>
+
+επιπλεον δημιουργειται και 3d σκηνη που μεσα σε αυτην εχουν το pointcloud και τοποθετουνται με κοκκινα σημαδια τα κεντρα βαρη
+
+
+
+  <div style="text-align:center;">
+    <img src="image/4.png" alt="4" width="800">
+</div>
