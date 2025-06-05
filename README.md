@@ -61,3 +61,51 @@ python TELIKO_detect_depth_estimatinon.py
   <div style="text-align:center;">
     <img src="image/4.png" alt="4" width="800">
 </div>
+
+## ROS2 with Drone & UGV in Gazebo
+
+![Image](https://github.com/user-attachments/assets/2c5281e2-e2a5-4066-b504-99a5ff595b13)
+
+Δημιουργια ενος καινουργιου φακελου ``robot_eketa `` οπου μεσα βαζω τον φακελο ```src```
+
+στο τρεμτικο μεσα στον ```ca_robot``` γραφω :
+
+```shell
+colcon build
+colcon build --symlink-install
+```
+
+μετα   
+```shell 
+source install/setup.bash
+```
+
+και τελος 
+```shell
+ros2 launch 
+```
+και σε αλλο τερματικο για να κουνηθει το drone
+
+```shell
+ros2 run ros2 topic pub -1 /simple_drone/takeoff std_msgs/msg/Empty "{}"
+```
+
+και μετα 
+
+```shell
+ros2 topic pub -1 /simple_drone/cmd_vel geometry_msgs/msg/Twist "{linear: {z: 1.0}, angular: {z: 0.0}}"
+```
+
+ή
+```shell
+ros2 topic pub -1 /simple_drone/cmd_vel geometry_msgs/msg/Twist "{linear: {z: -1.0}, angular: {z: 0.0}}"
+```
+
+και σε αλλο τερματικο για να κουνηθει το UGV
+```shell
+ros2 topic pub /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5},angular:{z: 0.5}}"
+```
+
+  <div style="text-align:center;">
+    <img src="image/01.png" alt="01" width="800">
+</div>
