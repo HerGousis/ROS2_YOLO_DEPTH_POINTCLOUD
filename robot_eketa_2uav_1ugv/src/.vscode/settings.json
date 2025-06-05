@@ -1,0 +1,23 @@
+{
+    "ros.distro": "humble",
+    "python.autoComplete.extraPaths": [
+        "/home/hercules/ca_robot/build/ca_robot_controller",
+        "/home/hercules/ca_robot/install/ca_robot_controller/lib/python3.10/site-packages",
+        "/home/hercules/my_robot_description/build/robot_controller",
+        "/home/hercules/my_robot_description/install/robot_controller/lib/python3.10/site-packages",
+        "/home/hercules/ros2_ws/build/my_robot_controller",
+        "/home/hercules/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/hercules/ca_robot/build/ca_robot_controller",
+        "/home/hercules/ca_robot/install/ca_robot_controller/lib/python3.10/site-packages",
+        "/home/hercules/my_robot_description/build/robot_controller",
+        "/home/hercules/my_robot_description/install/robot_controller/lib/python3.10/site-packages",
+        "/home/hercules/ros2_ws/build/my_robot_controller",
+        "/home/hercules/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

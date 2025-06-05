@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot name="ugv_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+   <link name="base_footprint1" />
+    <xacro:include filename="common_properties.xacro" />
+    <xacro:include filename="mobile_base.xacro" />
+    <xacro:include filename="mobile_base_gazebo.xacro" />
+
+    <xacro:include filename="camera.xacro" /> 
+
+    
+</robot>

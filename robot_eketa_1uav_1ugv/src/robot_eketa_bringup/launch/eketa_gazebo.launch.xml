@@ -1,0 +1,41 @@
+<launch>
+  <!-- UGV Description -->
+  <let name="ugv_urdf_path" 
+       value="$(find-pkg-share ugv_description)/urdf/robot.urdf.xacro" />
+  
+
+  <!-- Drone Description -->
+  <let name="drone_urdf_path" 
+       value="$(find-pkg-share sjtu_drone_description)/urdf/sjtu_drone.urdf.xacro" />
+
+  <!-- UGV -->
+  <node pkg="robot_state_publisher" exec="robot_state_publisher" name="ugv_state_publisher">
+    <param name="robot_description"
+           value="$(command 'xacro $(var ugv_urdf_path)')" />
+    <remap from="robot_description" to="robot_description_ugv"/>
+  </node>
+
+  <!-- Drone -->
+  <node pkg="robot_state_publisher" exec="robot_state_publisher" name="drone_state_publisher">
+    <param name="robot_description"
+           value="$(command 'xacro $(var drone_urdf_path)')" />
+    <remap from="robot_description" to="robot_description_drone"/>
+  </node>
+
+  <!-- Gazebo -->
+  <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py" >
+    <arg name="world" value="$(find-pkg-share robot_eketa_bringup)/world/world_EKETA.world" />
+  </include>
+
+  <!-- Spawn UGV -->
+  <node pkg="gazebo_ros" exec="spawn_entity.py"
+        name="spawn_ugv"
+        args="-topic robot_description_ugv -entity ugv_robot -x 0 -y 0 -z 0" />
+
+  <!-- Spawn Drone -->
+  <node pkg="gazebo_ros" exec="spawn_entity.py"
+        name="spawn_drone"
+        args="-topic robot_description_drone -entity drone_robot -x 0 -y 2 -z 1" />
+
+  
+</launch>
