@@ -93,18 +93,18 @@ ros2 launch robot_eketa_bringup eketa_gazebo.launch.xml
 και σε αλλο τερματικο για να κουνηθει το drone
 
 ```shell
-ros2 run ros2 topic pub -1 /simple_drone/takeoff std_msgs/msg/Empty "{}"
+ros2 topic pub  /simple_drone/takeoff std_msgs/msg/Empty "{}"
 ```
 
 και μετα 
 
 ```shell
-ros2 topic pub -1 /simple_drone/cmd_vel geometry_msgs/msg/Twist "{linear: {z: 1.0}, angular: {z: 0.0}}"
+ros2 topic pub  /simple_drone/cmd_vel geometry_msgs/msg/Twist "{linear: {z: 1.0}, angular: {z: 0.0}}"
 ```
 
 ή
 ```shell
-ros2 topic pub -1 /simple_drone/cmd_vel geometry_msgs/msg/Twist "{linear: {z: -1.0}, angular: {z: 0.0}}"
+ros2 topic pub  /simple_drone/cmd_vel geometry_msgs/msg/Twist "{linear: {z: -1.0}, angular: {z: 0.0}}"
 ```
 
 και σε αλλο τερματικο για να κουνηθει το UGV
@@ -139,35 +139,35 @@ ros2 launch robot_eketa_bringup 2uav_1ugv_gazebo.launch.xml
 και σε αλλο τερματικο για να κουνηθει το drone 1
 
 ```shell
-ros2 run ros2 topic pub -1 /simple_drone/takeoff std_msgs/msg/Empty "{}"
+ros2 topic pub  /simple_drone/takeoff std_msgs/msg/Empty "{}"
 ```
 
 και μετα 
 
 ```shell
-ros2 topic pub -1 /simple_drone/cmd_vel geometry_msgs/msg/Twist "{linear: {z: 1.0}, angular: {z: 0.0}}"
+ros2 topic pub  /simple_drone/cmd_vel geometry_msgs/msg/Twist "{linear: {z: 1.0}, angular: {z: 0.0}}"
 ```
 
 ή
 ```shell
-ros2 topic pub -1 /simple_drone/cmd_vel geometry_msgs/msg/Twist "{linear: {z: -1.0}, angular: {z: 0.0}}"
+ros2 topic pub  /simple_drone/cmd_vel geometry_msgs/msg/Twist "{linear: {z: -1.0}, angular: {z: 0.0}}"
 ```
 
 και σε αλλο τερματικο για να κουνηθει το drone 2
 
 ```shell
-ros2 run ros2 topic pub -1 /simple_drone2/takeoff std_msgs/msg/Empty "{}"
+ros2 topic pub /simple_drone2/takeoff std_msgs/msg/Empty "{}"
 ```
 
 και μετα 
 
 ```shell
-ros2 topic pub -1 /simple_drone2/cmd_vel geometry_msgs/msg/Twist "{linear: {z: 1.0}, angular: {z: 0.0}}"
+ros2 topic pub /simple_drone2/cmd_vel geometry_msgs/msg/Twist "{linear: {z: 1.0}, angular: {z: 0.0}}"
 ```
 
 ή
 ```shell
-ros2 topic pub -1 /simple_drone2/cmd_vel geometry_msgs/msg/Twist "{linear: {z: -1.0}, angular: {z: 0.0}}"
+ros2 topic pub /simple_drone2/cmd_vel geometry_msgs/msg/Twist "{linear: {z: -1.0}, angular: {z: 0.0}}"
 ```
 
 και σε αλλο τερματικο για να κουνηθει το UGV
