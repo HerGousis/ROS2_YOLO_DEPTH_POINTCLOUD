@@ -49,6 +49,12 @@ python fasi1_detect_depth.py
 ```
 python TELIKO_detect_depth_estimatinon.py
 ```
+### Example 1 
+<div style="text-align:center;">
+    <img src="image/03.png" alt="1" width="800">
+</div>
+
+### Example 2
 
   <div style="text-align:center;">
     <img src="image/1.png" alt="1" width="800">
